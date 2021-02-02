@@ -1,0 +1,11 @@
+.icono:hover {
+    color: greenyellow;
+}
+
+ul li a {
+    color: whitesmoke;
+}
+
+ul li a:hover{
+    color: greenyellow;
+}

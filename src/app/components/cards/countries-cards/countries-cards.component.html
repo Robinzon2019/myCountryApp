@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="targeta border-2 card" (click)="getCountry(country)" *ngFor="let country of countries">
+        
+        <div class="encabezado-targeta">
+            <img class="imagen-targeta " [src]="country.flag" alt="">
+        </div>
+        <div class="cuerpo-targeta">      
+            <div class="text-center m-3">
+                <span class="negrita">Nombre: </span>
+                <label> {{ country.name }}</label>
+                <br/>
+                
+                <span class="negrita">Idioma: </span>
+                <div>
+                    <label *ngFor="let idioma of country.languages, let i = index"> {{ idioma.name }} {{ i === country.languages.length -1 ?   vacio.trim() : coma.trim() + '&nbsp;' }} </label>
+                </div>
+                <br/>
+                <a routerLink="/pais" class="btn btn-outline-primary boton-targeta text-center">Ver detalles</a>
+            </div>      
+        </div>
+
+    </div>
+</div>
+

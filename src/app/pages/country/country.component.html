@@ -1,0 +1,19 @@
+<p>country Name</p>
+<div *ngFor="let item of country">
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img [src]="item.flag" class="img-fluid">
+                {{ item.flag }}
+            </div>
+            <div class="col-6">
+                <p>{{ item.name }}</p>
+                <p>{{ item.population }}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
