@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.negrita {
+  font-weight: bold;
+}
+
+/*ESTILOS PARA LAS TARGETAS*/
+
+.targeta {
+  width: 225px;
+  max-height: 400px;
+  padding: 2px;
+  margin: 7px;
+  padding-bottom: 20px;
+}
+
+/* .encabezado-targeta {
+  height: 200px;
+} */
+
+.imagen-targeta {
+  width: 100%;
+  height: 140px;
+}
+
+.cuerpo-targeta {
+  margin-top: 5px;
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+.boton-targeta {
+  margin-top: 10px;
+  /* width: 100%; */
+}
+
+/* ESTILOS RESPONSIVE   */
+
+@media (max-width: 575px) {
+  .targeta {
+      width: 100%;
+  }
+}

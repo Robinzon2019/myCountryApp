@@ -1,19 +1,82 @@
-<p>country Name</p>
+<div class="text-center my-5">
+    <h1> {{ nameCountry }} </h1>
+</div>
+
 <div *ngFor="let item of country">
-   
+
     <div class="container">
         <div class="row">
             <div class="col-6">
                 <img [src]="item.flag" class="img-fluid">
-                {{ item.flag }}
+                <!-- {{ item.flag }} -->
             </div>
-            <div class="col-6">
-                <p>{{ item.name }}</p>
-                <p>{{ item.population }}</p>
+
+            <!-- <div class="col-1"></div> -->
+
+            <div class="col-3">
+                <p>
+                    <span class="negrita">Nombre: </span>
+                    <label class="margen">{{ item.name }}</label>
+                </p>
+                <p>
+                    <span class="negrita">Region: </span>
+                    <label class="margen">{{ item.region }}</label>
+                </p>
+                <p>
+                    <span class="negrita">Capital: </span>
+                    <label class="margen">{{ item.capital }}</label>
+                </p>
+                <p>
+                    <span class="negrita">Poblacion: </span>
+                    <label>{{ item.population | number }}</label>
+                </p>
+                <p>
+                    <span class="negrita">Idioma (s): </span>
+                    <label *ngFor="let idioma of item.languages, let i = index"> {{ idioma.name }} {{ i === item.languages.length  -1 ?   vacio.trim() : coma.trim() + '&nbsp;' }} </label>
+                </p>
+                <p>
+                    <span class="negrita">Nombre nativo: </span>
+                    <label>{{ item.nativeName }}</label>
+                </p>
             </div>
+
+            <div class="col-3">
+                <p>
+                    <span class="negrita">Area: </span>
+                    <label class="margen">{{ item.area | number}}  Km</label>
+                </p>
+                <p>
+                    <span class="negrita">Codigos de llamadas: </span>
+                    <label class="margen">{{ item.callingCodes }}</label>
+                </p>
+
+                <h4 class="negrita mt-4 mb-3">Datos de la moneda</h4>
+
+                <ul *ngFor="let item of item.currencies">
+                    <li>
+                        <p>
+                            <span class="negrita">Codigo: </span>
+                            <label>{{ item.code }}</label>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="negrita">Nombre: </span>
+                            <label>{{ item.name }}</label>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="negrita">Simbolo: </span>
+                            <label>{{ item.symbol }}</label>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
-    
+
 </div>
 
 

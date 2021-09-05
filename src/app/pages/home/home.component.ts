@@ -13,12 +13,15 @@ export class HomeComponent implements OnInit {
   //country: CountryResponse;
   countryName: string;
 
+  countryList: any;
+
   constructor(private countryService: CountryService) {
   }
 
   ngOnInit() {
     this.countryName = "";
     this.evaluarCarga();
+    this.countryList = this.cargarPaises();
   }
 
   // setInputValue(item){
@@ -59,14 +62,21 @@ export class HomeComponent implements OnInit {
 
   cargarPais(terminoBusqueda){
 
-    this.countryName = terminoBusqueda.value;
-    this.countryService.getCountry(this.countryName)
-      .subscribe( (resp: any) => {
-        console.log('Longitud: ' + this.countries.length);
-        this.countries = resp;
-        console.log( 'Cargando pais: ' );
-        console.log( resp );
-      });
+    if(terminoBusqueda.value != ''){
+
+      this.countryName = terminoBusqueda.value;
+      this.countryService.getCountry(this.countryName)
+        .subscribe( (resp: any) => {
+          console.log('Longitud: ' + this.countries.length);
+          this.countries = resp;
+          console.log( 'Cargando pais: ' );
+          console.log( resp );
+        });
+
+    }else{
+      this.cargarPaises();
+    }
+
   }
 
 }
