@@ -1,22 +1,21 @@
-<div class="text-center my-5">
+<div class="text-center mt-5">
     <h1> {{ nameCountry }} </h1>
 </div>
 
-<div *ngFor="let item of country">
+<div>
 
-    <div class="container">
+    <div class="container my-5">
         <div class="row">
-            <div class="col-6">
-                <img [src]="item.flag" class="img-fluid">
-                <!-- {{ item.flag }} -->
-            </div>
+          <div *ngFor="let item of country">
 
-            <!-- <div class="col-1"></div> -->
+            <div class="col-6 mb-3">
+              <img [src]="item.flags.png" class="img-fluid">
+            </div>
 
             <div class="col-3">
                 <p>
                     <span class="negrita">Nombre: </span>
-                    <label class="margen">{{ item.name }}</label>
+                    <label class="margen">{{ item.name.common }}</label>
                 </p>
                 <p>
                     <span class="negrita">Region: </span>
@@ -30,22 +29,23 @@
                     <span class="negrita">Poblacion: </span>
                     <label>{{ item.population | number }}</label>
                 </p>
-                <p>
+                <!--<p>
                     <span class="negrita">Idioma (s): </span>
                     <label *ngFor="let idioma of item.languages, let i = index"> {{ idioma.name }} {{ i === item.languages.length  -1 ?   vacio.trim() : coma.trim() + '&nbsp;' }} </label>
-                </p>
-                <p>
-                    <span class="negrita">Nombre nativo: </span>
-                    <label>{{ item.nativeName }}</label>
+                </p>-->
+                 <p>
+                    <span class="negrita">Nombre oficial: </span>
+                    <label>{{ item.name.official }}</label>
                 </p>
             </div>
 
             <div class="col-3">
-                <p>
+                 <p>
                     <span class="negrita">Area: </span>
                     <label class="margen">{{ item.area | number}}  Km</label>
                 </p>
-                <p>
+
+                <!--<p>
                     <span class="negrita">Codigos de llamadas: </span>
                     <label class="margen">{{ item.callingCodes }}</label>
                 </p>
@@ -71,8 +71,11 @@
                             <label>{{ item.symbol }}</label>
                         </p>
                     </li>
-                </ul>
+                </ul> -->
             </div>
+
+          </div>
+
 
         </div>
     </div>

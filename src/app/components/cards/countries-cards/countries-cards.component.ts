@@ -9,22 +9,23 @@ import { CountryService } from 'src/app/services/country.service';
 })
 export class CountriesCardsComponent implements OnInit {
 
-  @Input() countries: any[] = [];
+  @Input()
+  countries: any;
+
   vacio = '';
   coma = ',';
-  
+
   constructor(private router: Router, private countryService: CountryService) { }
 
   ngOnInit() {
   }
 
   getCountry(country){
-    console.log(country);
+    console.log('lenguaje: ', country.languages);
 
-    let countryName = country.name;
+    let countryName = country.name.common;
 
     this.router.navigate( ['/pais', countryName] );
   }
-
 
 }

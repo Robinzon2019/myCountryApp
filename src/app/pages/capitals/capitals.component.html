@@ -12,7 +12,10 @@
       <ng-container *ngFor="let country of countries">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="border border-primary my-4 p-3">
-            <p> <span class="negrita">País:</span> {{ country.name }} </p>
+            <div *ngIf="!country.name.official">
+              <p> <span class="negrita">País:</span> {{ country.name.common }} </p>
+            </div>
+            <p> <span class="negrita">País:</span> {{ country.name.official }} </p>
             <p> <span class="negrita">Capital:</span> {{ country.capital }} </p>
           </div>
         </div>

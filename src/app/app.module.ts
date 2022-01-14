@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CountryComponent } from './pages/country/country.component';
 import { CountriesCardsComponent } from './components/cards/countries-cards/countries-cards.component';
 import { CapitalsComponent } from './pages/capitals/capitals.component';
-import { LanguagesComponent } from './pages/languages/languages.component';
+import { ContinentComponent } from './pages/continent/continent.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { LanguagesComponent } from './pages/languages/languages.component';
     CountryComponent,
     CountriesCardsComponent,
     CapitalsComponent,
-    LanguagesComponent
+    ContinentComponent
   ],
   imports: [
     BrowserModule,

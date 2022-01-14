@@ -54,8 +54,8 @@ export class HomeComponent implements OnInit {
     this.countryService.getCountries()
   		.subscribe( (resp: any) => {
         //this.countries.push( resp );
-        console.log('Longitud del arreglo countries: ' + this.countries.length);
         this.countries = resp;
+        console.log('Longitud del arreglo countries: ' + this.countries.length);
         console.log( resp );
       });
   }
@@ -67,8 +67,8 @@ export class HomeComponent implements OnInit {
       this.countryName = terminoBusqueda.value;
       this.countryService.getCountry(this.countryName)
         .subscribe( (resp: any) => {
-          console.log('Longitud: ' + this.countries.length);
           this.countries = resp;
+          console.log('Longitud: ' + this.countries.length);
           console.log( 'Cargando pais: ' );
           console.log( resp );
         });

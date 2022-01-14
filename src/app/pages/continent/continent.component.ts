@@ -4,13 +4,17 @@ import { CountryService } from 'src/app/services/country.service';
 
 @Component({
   selector: 'app-languages',
-  templateUrl: './languages.component.html',
-  styleUrls: ['./languages.component.css']
+  templateUrl: './continent.component.html',
+  styleUrls: ['./continent.component.css']
 })
-export class LanguagesComponent implements OnInit {
+export class ContinentComponent implements OnInit {
 
   vacio = '';
   coma = ',';
+
+  countries: any = [];
+  languajeName: string;
+  countriesFiltered: any = [];
 
   constructor(private countryService: CountryService) { }
 
@@ -19,16 +23,25 @@ export class LanguagesComponent implements OnInit {
     this.evaluarCarga();
   }
 
-  countries: CountryResponse[] = [];
-  languajeName: string;
+
 
   cargarPaises(){
     this.countryService.getCountries()
     .subscribe( (resp: any) => {
       console.log('Longitud del arreglo countries: ' + this.countries.length);
       this.countries = resp;
-      console.log( resp );
+      console.log('Paises: ', this.countries );
     } );
+  }
+
+  filterByContinent(continentName: string): void{
+    this.countries.forEach(item => {
+      if(item.continent === continentName){
+        this.countriesFiltered.push(item);
+      }
+      this.countries = this.countriesFiltered;
+      console.log('filtro: ', this.countries);
+    });
   }
 
   cargarIdioma(terminoBusqueda){
@@ -52,7 +65,7 @@ export class LanguagesComponent implements OnInit {
 
   evaluarCarga(){
 
-    if(this.languajeName  == ""){
+    if(this.languajeName  === ""){
       this.cargarPaises();
     }
     else{

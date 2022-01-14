@@ -14,10 +14,11 @@ export class CountryComponent implements OnInit {
   vacio = '';
   coma = ',';
 
-  constructor(private router: ActivatedRoute, private countryService: CountryService) { 
+  constructor(private router: ActivatedRoute, private countryService: CountryService) {
     this.router.params.subscribe( params => {
-      this.nameCountry = params['name'];
-      this.getCountry( params['name'] )
+      this.nameCountry = params.name;
+      console.log('params', params.name);
+      this.getCountry( params.name )
     } );
   }
 
@@ -27,7 +28,7 @@ export class CountryComponent implements OnInit {
   getCountry(countryName){
     this.countryService.getCountry(countryName)
       .subscribe(country => {
-        console.log(country);
+        console.log("Pais obtenido", country);
         this.country = country;
       })
   }
