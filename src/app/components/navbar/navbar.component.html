@@ -25,18 +25,17 @@
 </nav> -->
 
 
-
 <nav>
   <input type="checkbox" id="check">
   <label for="check" class="checkBtn">
-    <i class="fas fa-bars"></i>
+    <i class="fas fa-bars" (click)="desplegarMenu()"></i>
   </label>
   <a href="#" class="enlaceLogo">
     <img src="../../../assets/img/logo2.png" alt="" class="logo" style="color: white;">
   </a>
-  <ul>
-    <li><a class="active" routerLink="home">Inicio</a></li>
-    <li><a routerLink="capitals">Capitales</a></li>
-    <li><a routerLink="continents">Continentes</a></li>
+  <ul id="menu">
+    <li><a class="active" routerLink="home" (click)="guardarMenu()">Inicio</a></li>
+    <li><a routerLink="capitals" (click)="guardarMenu()">Capitales</a></li>
+    <li><a routerLink="continents" (click)="guardarMenu()">Continentes</a></li>
   </ul>
 </nav>

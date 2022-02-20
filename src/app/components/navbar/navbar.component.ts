@@ -20,4 +20,23 @@ export class NavbarComponent implements OnInit {
   //   return this.countryName;
   // }
 
+  guardarMenu(): void{
+    var menu = document.getElementById('menu');
+
+    if(menu.style.left != '-100%'){
+      menu.style.left = '-100%';
+    }
+
+  }
+
+
+  desplegarMenu(): void{
+    var menu = document.getElementById('menu');
+
+    if(menu.style.left == '-100%'){
+      menu.style.left = '0';
+    }
+
+  }
+
 }
